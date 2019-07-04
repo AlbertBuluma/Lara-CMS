@@ -45,7 +45,7 @@ class CategoriesController extends Controller
             'name' => $request->name
         ]);
 
-
+        session()->flash('success', 'Category created successfully');
 
         return redirect(route('categories.index'));
     }
