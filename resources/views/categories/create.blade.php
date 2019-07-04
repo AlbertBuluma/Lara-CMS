@@ -1,11 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="d-flex justify-content-end mb-2">
-        {{--        <a href="/categories/create" class="btn btn-success float-right">Add Category</a>--}}
-        <a href="{{ route('categories.create') }}" class="btn btn-success float-right">Add Category</a>
-    </div>
     <div class="card card-default">
-        <div class="card-header">Categories</div>
+        <div class="card-header">Create Category</div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success">Add Category</button>
+                </div>
+            </form>
+        </div>
     </div>
 @endsection
