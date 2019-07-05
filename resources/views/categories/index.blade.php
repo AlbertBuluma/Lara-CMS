@@ -19,7 +19,9 @@
                             <td>
                                 {{ $category->name }}
                             </td>
-                            <td><a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info btn-sm">Edit</a></td>
+                            <td><a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info btn-sm">Edit</a>
+                            <button class="btn btn-danger btn-sm" onclick="handleDelete()">Delete</button>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
