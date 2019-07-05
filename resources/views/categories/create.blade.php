@@ -5,7 +5,6 @@
             {{ isset($category) ? 'Edit Category':'Create Category' }}
         </div>
         <div class="card-body">
-            <form action="{{ route('categories.store') }}" method="post">
                 @if($errors->any())
                     <div class="alert alert-danger">
                         <ul class="list-group">
@@ -17,6 +16,7 @@
                         </ul>
                     </div>
                 @endif
+            <form action="{{ route('categories.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="name">Name</label>
