@@ -5,4 +5,11 @@
         {{--        <a href="/posts/create" class="btn btn-success float-right">Add Post</a>--}}
         <a href="{{ route('posts.create') }}" class="btn btn-success float-right">Add Post</a>
     </div>
+
+    <div class="card card-default">
+        <div class="card-header">Posts</div>
+            <div class="card-body">
+
+            </div>
+    </div>
 @endsection
