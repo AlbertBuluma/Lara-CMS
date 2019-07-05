@@ -106,5 +106,7 @@ class CategoriesController extends Controller
         $category->delete();
 
         session()->flash('success', 'Category deleted successfully.');
+
+        return redirect(route('categories.index'));
     }
 }
