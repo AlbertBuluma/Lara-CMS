@@ -40,8 +40,9 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-{{--                            <div class="modal-body">--}}
-{{--                            </div>--}}
+                            <div class="modal-body">
+                                <p class="text-center text-bold">Are you sure you want to delete this category?</p>
+                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                                 <button type="submit" class="btn btn-danger">Yes, delete</button>
