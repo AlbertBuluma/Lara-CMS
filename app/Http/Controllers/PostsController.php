@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Posts\CreatePostsRequest;
 use Illuminate\Http\Request;
 use App\Post;
+use function Sodium\compare;
 
 class PostsController extends Controller
 {
@@ -37,7 +38,8 @@ class PostsController extends Controller
      */
     public function store(CreatePostsRequest $request)
     {
-        $image = ($request->image->store('posts'));
+//        dd($request->image->store('posts'));
+        $image = $request->image->store('posts');
 
         Post::create([
             'title' => $request->title,
