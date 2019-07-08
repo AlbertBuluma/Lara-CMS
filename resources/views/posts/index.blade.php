@@ -21,6 +21,8 @@
                         <tr>
                             <td><img src="{{ asset($post->image) }}" width="120px" height="60px" alt=""></td>
                             <td>{{ $post->title }}</td>
+                            <td><a href="" class="btn btn-info btn-sm">Edit</a></td>
+                            <td><a href="" class="btn btn-danger btn-sm">Trash</a></td>
                         </tr>
                     @endforeach
                     </tbody>
