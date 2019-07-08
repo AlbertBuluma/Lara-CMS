@@ -97,6 +97,11 @@ class PostsController extends Controller
     {
         $post->delete();
 
+        if ($post->trashed()){
+            $post->forceDelete();   //Force delete if post has been trashed
+        }else{
+            $post->delete();
+        }
         session()->flash('success','Post trashed successfully.');
 
         return redirect(route('posts.index'));
