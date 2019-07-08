@@ -41,7 +41,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.1.1/trix.js"></script>
     <script>
         flatpickr('#published_at', {
-            enableTime:true
+            enableTime:true,
+            minDate: "today"
         })
     </script>
 @endsection
