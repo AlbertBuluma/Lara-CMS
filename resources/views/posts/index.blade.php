@@ -12,10 +12,10 @@
                 @if($posts->count() > 0)
                     <table class="table">
                     <thead>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th></th>
-                        <th></th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th></th>
+                    <th></th>
                     </thead>
                     <tbody>
                     @foreach($posts as $post)
