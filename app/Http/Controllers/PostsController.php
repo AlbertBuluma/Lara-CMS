@@ -93,7 +93,8 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+//    public function destroy(Post $post)
+    public function destroy($id)    //Disable route model binding and use id
     {
         $post->delete();
 
@@ -102,7 +103,8 @@ class PostsController extends Controller
         }else{
             $post->delete();
         }
-        session()->flash('success','Post trashed successfully.');
+
+        session()->flash('success','Post deleted successfully.');
 
         return redirect(route('posts.index'));
     }
