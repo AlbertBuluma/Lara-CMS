@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Posts\CreatePostsRequest;
 use Illuminate\Http\Request;
 use App\Post;
-use function Sodium\compare;
+use Illuminate\Support\Facades\Storage;
+
 
 class PostsController extends Controller
 {
