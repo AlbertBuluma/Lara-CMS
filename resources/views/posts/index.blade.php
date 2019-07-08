@@ -9,7 +9,8 @@
     <div class="card card-default">
         <div class="card-header">Posts</div>
             <div class="card-body">
-                <table class="table">
+                @if($posts->count() > 0)
+                    <table class="table">
                     <thead>
                         <th>Image</th>
                         <th>Title</th>
@@ -21,18 +22,18 @@
                         <tr>
                             <td><img src="{{ asset($post->image) }}" width="120px" height="60px" alt=""></td>
                             <td>{{ $post->title }}</td>
-                                @if(!$post->trashed())
+                            @if(!$post->trashed())
                                 <td>
                                     <a href="" class="btn btn-info btn-sm">Edit</a>
                                 </td>
-                                @endif
-{{--                            <td><a href="" class="btn btn-danger btn-sm">Trash</a></td>--}}
+                            @endif
+                            {{--                            <td><a href="" class="btn btn-danger btn-sm">Trash</a></td>--}}
                             <td>
                                 <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">
-                                    {{ $post->trashed() ? 'Delete' : 'Trash' }}
+                                        {{ $post->trashed() ? 'Delete' : 'Trash' }}
                                     </button>
                                 </form>
                             </td>
@@ -40,6 +41,10 @@
                     @endforeach
                     </tbody>
                 </table>
+
+                @else
+                    <h3 class="text-center">No Posts available</h3>
+                @endif
             </div>
     </div>
 @endsection
