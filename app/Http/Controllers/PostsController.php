@@ -101,4 +101,19 @@ class PostsController extends Controller
 
         return redirect(route('posts.index'));
     }
+
+    /*
+* Display a list of all trashed posts.
+*
+* @param  int  $id
+* @return \Illuminate\Http\Response
+*/
+    public function trashed(){
+
+        $trashed = Post::withTrashed()->get();  //Fetch all posts that have been trashed
+
+        return view('posts.index', compact('trashed'));
+//        return view('posts.index')->withPosts($trashed);
+    }
+
 }
