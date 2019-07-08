@@ -96,7 +96,10 @@ class PostsController extends Controller
 //    public function destroy(Post $post)
     public function destroy($id)    //Disable route model binding and use id
     {
-        $post->delete();
+//        $post = Post::withTrashed()->where('id', $id)->first(); //First instance of trashed post
+        $post = Post::withTrashed()->where('id', $id)->firstOrFail();   //Throw 404 error if there's no trashed post existing
+
+//        $post->delete();
 
         if ($post->trashed()){
             $post->forceDelete();   //Force delete if post has been trashed
