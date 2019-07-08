@@ -22,7 +22,14 @@
                             <td><img src="{{ asset($post->image) }}" width="120px" height="60px" alt=""></td>
                             <td>{{ $post->title }}</td>
                             <td><a href="" class="btn btn-info btn-sm">Edit</a></td>
-                            <td><a href="" class="btn btn-danger btn-sm">Trash</a></td>
+{{--                            <td><a href="" class="btn btn-danger btn-sm">Trash</a></td>--}}
+                            <td>
+                                <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Trash</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
