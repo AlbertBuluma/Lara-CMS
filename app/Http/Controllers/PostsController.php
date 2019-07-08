@@ -103,6 +103,8 @@ class PostsController extends Controller
 //        $post->delete();
 
         if ($post->trashed()){
+
+            Storage::delete($post->image);
             $post->forceDelete();   //Force delete if post has been trashed
         }else{
             $post->delete();
