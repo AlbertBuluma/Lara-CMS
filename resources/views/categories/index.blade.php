@@ -11,10 +11,11 @@
             @if($categories->count() > 0)
                 <table class="table">
                     <thead>
-                    <th>Name</th>
-                    <th></th>
-                </thead>
-                <tbody>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody>
                     @foreach($categories as $category)
                         <tr>
                             <td>
