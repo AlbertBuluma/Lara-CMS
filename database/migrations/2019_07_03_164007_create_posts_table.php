@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('content');
-            $table->string('Image');
+            $table->string('image');
             $table->timestamp('published_at')->nullable();  //You can create a blog post without filling in this field
             $table->timestamps();
         });
