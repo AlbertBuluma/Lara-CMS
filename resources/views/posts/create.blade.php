@@ -4,8 +4,11 @@
 <div class="card card-default">
     <div class="card-header">{{ isset($post) ? 'Edit Post' : 'Create Post' }}</div>
     <div class="card-body">
-        <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ isset($post) ? route('posts.update',$post->id) : route('posts.store') }}" method="post" enctype="multipart/form-data">
             @csrf
+            @if(isset($post))
+                @method('PUT')
+            @endif
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" id="title" value="{{ isset($post) ? $post->title : ''}}">
