@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card card-default">
-    <div class="card-header">Create Post</div>
+    <div class="card-header">{{ isset($post) ? 'Edit Post' : 'Create Post' }}</div>
     <div class="card-body">
         <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
             @csrf
