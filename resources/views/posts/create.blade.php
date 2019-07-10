@@ -28,7 +28,8 @@
                 <input type="text" class="form-control" name="published_at" id="published_at" value="{{ isset($post) ? $post->published_at : '' }}">
             </div>
             @if(isset($post))
-                <img src="{{ asset($post->image) }}" alt="" width="100%">
+                <img src="{{ asset('storage/'.$post->image) }}" alt="" width="100%">
+{{--                <img src="{{ asset($post->image) }}" alt="" width="100%">--}}
             @endif
             <div class="form-group">
                 <label for="image">Image</label>
