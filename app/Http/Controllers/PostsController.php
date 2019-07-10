@@ -99,7 +99,7 @@ class PostsController extends Controller
         $post->update($data);
 
         session()->flash('success', 'Post updated successfully');
-        redirect(route('posts.index'));
+        return redirect(route('posts.index'));
     }
 
     /**
