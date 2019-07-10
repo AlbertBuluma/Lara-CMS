@@ -27,6 +27,9 @@
                 <label for="published_at">Published At</label>
                 <input type="text" class="form-control" name="published_at" id="published_at" value="{{ isset($post) ? $post->published_at : '' }}">
             </div>
+            @if(isset($post))
+                <img src="{{ asset($post->image) }}" alt="" width="100%">
+            @endif
             <div class="form-group">
                 <label for="image">Image</label>
                 <input type="file" class="form-control" name="image" id="image">
