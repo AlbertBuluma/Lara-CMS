@@ -36,6 +36,14 @@
                 <input type="file" class="form-control" name="image" id="image">
             </div>
             <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category" id="category" class="form-group">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+                </select>
+            </div>
+            <div class="form-group">
                 <button type="submit" class="btn btn-success">{{ isset($post) ? 'Update Post' : 'Create Post' }}</button>
             </div>
         </form>
