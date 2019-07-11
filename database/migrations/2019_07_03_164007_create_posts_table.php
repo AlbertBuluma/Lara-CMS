@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->text('content');
             $table->string('image');
+            $table->integer('category_id'); //Create a new migration when in production
             $table->timestamp('published_at')->nullable();  //You can create a blog post without filling in this field
             $table->timestamps();
         });
