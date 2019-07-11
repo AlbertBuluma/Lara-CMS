@@ -26,6 +26,15 @@
                                 <td>
                                     <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 </td>
+                            @else
+                                <td>
+                                    <form action="{{ route('restore-posts',$post->id) }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                        <button class="btn btn-info btn-sm">Restore</button>
+                                    </form>
+{{--                                    <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-info btn-sm">Restore</a>--}}
+                                </td>
                             @endif
                             {{--                            <td><a href="" class="btn btn-danger btn-sm">Trash</a></td>--}}
                             <td>
