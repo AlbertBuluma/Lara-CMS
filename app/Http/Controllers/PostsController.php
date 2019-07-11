@@ -139,7 +139,7 @@ class PostsController extends Controller
 */
     public function trashed(){
 
-        $posts = Post::withTrashed()->get();  //Fetch all posts that have been trashed
+        $posts = Post::onlyTrashed()->get();  //Fetch all posts that have been trashed
 //        $trashed = Post::withTrashed()->get();  //Fetch all posts that have been trashed
 
         return view('posts.index', compact('posts'));
