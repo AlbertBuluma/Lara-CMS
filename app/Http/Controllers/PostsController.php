@@ -6,6 +6,7 @@ use App\Http\Requests\Posts\CreatePostsRequest;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
 //use Illuminate\Support\Facades\Storage;
 
 
@@ -29,7 +30,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create')->with('categories', Category::all());
     }
 
     /**
