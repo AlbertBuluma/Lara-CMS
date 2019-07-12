@@ -55,9 +55,14 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.1.1/trix.js"></script>
     <script>
+        let today = new Date();
+
         flatpickr('#published_at', {
             enableTime:true,
-            minDate: "today"
+            time_24hr: true,
+            minDate: "today",
+            defaultHour: today.getHours(),
+            defaultMinute: today.getMinutes()
         })
     </script>
 @endsection
