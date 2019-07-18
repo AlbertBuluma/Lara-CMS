@@ -1,5 +1,5 @@
 # Lara-CMS
-<<<<<<< HEAD
+
 A sample Content Management System built using the Laravel framework.
 =======
 
@@ -16,4 +16,4 @@ $ php artisan migrate
 $ php artisan db:seed
 $ php artisan serve
 ```
->>>>>>> develop
+
