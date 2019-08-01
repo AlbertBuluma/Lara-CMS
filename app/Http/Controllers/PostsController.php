@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\VerifyCategoriesCount;
 use App\Http\Requests\Posts\CreatePostsRequest;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
@@ -17,6 +18,11 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function _construct()
+    {
+        $this->middleware('VerifyCategoriesCount')->only(['create','store']);
+    }
+
     public function index()
     {
         $posts = Post::all();
